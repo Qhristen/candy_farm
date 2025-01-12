@@ -36,10 +36,14 @@ const modal = createAppKit({
   adapters: [solanaWeb3JsAdapter],
   projectId,
   networks: [solana, solanaTestnet, solanaDevnet],
-  // defaultNetwork: mainnet,
   metadata: metadata,
   features: {
     analytics: true, // Optional - defaults to your Cloud configuration
+    smartSessions: true,
+    history: true,
+    socials: ['google', 'x', 'github', 'discord', 'farcaster'],
+    emailShowWallets: true
+
   },
 });
 
