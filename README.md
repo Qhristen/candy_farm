@@ -1,0 +1,1 @@
+CandyFarm is a next-generation DeFi Yield Aggregator, designed to simplify and maximize returns for users in the decentralized finance space. With a focus on efficiency, automation, and security, our platform empowers users to earn the highest possible yields on their assets across multiple protocols.
