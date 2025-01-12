@@ -27,7 +27,7 @@ if (!projectId) {
 const metadata = {
   name: "CandyFarm",
   description: "Candy farm wallet connect",
-  url: "https://reown.com/appkit", // origin must match your domain & subdomain
+  url: "https://candyfarm.blaqrio.fun/", // origin must match your domain & subdomain
   icons: ["https://assets.reown.com/reown-profile-pic.png"],
 };
 
