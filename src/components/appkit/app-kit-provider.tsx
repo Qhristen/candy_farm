@@ -1,23 +1,21 @@
 // context/index.tsx
 "use client";
 
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { projectId } from "@/lib/appkit";
+import { SolanaAdapter } from "@reown/appkit-adapter-solana/react";
+import { solana, solanaDevnet, solanaTestnet } from "@reown/appkit/networks";
 import { createAppKit } from "@reown/appkit/react";
-import React, { type ReactNode } from "react";
-import { cookieToInitialState, WagmiProvider, type Config } from "wagmi";
-import { projectId, wagmiAdapter } from "@/lib/appkit";
-import { SolanaAdapter } from '@reown/appkit-adapter-solana/react'
-import { solana, solanaTestnet, solanaDevnet } from '@reown/appkit/networks'
-import { PhantomWalletAdapter, SolflareWalletAdapter } from '@solana/wallet-adapter-wallets'
-
+import {
+  PhantomWalletAdapter,
+  SolflareWalletAdapter,
+} from "@solana/wallet-adapter-wallets";
+import { type ReactNode } from "react";
 
 //  Set up Solana Adapter
 const solanaWeb3JsAdapter = new SolanaAdapter({
-  wallets: [new PhantomWalletAdapter(), new SolflareWalletAdapter()]
-})
+  wallets: [new PhantomWalletAdapter(), new SolflareWalletAdapter()],
+});
 
-// Set up queryClient
-const queryClient = new QueryClient();
 
 if (!projectId) {
   throw new Error("Project ID is not defined");
@@ -41,32 +39,17 @@ const modal = createAppKit({
     analytics: true, // Optional - defaults to your Cloud configuration
     smartSessions: true,
     history: true,
-    socials: ['google', 'x', 'github', 'discord', 'farcaster'],
-    emailShowWallets: true
-
+    socials: ["google", "x", "github", "discord", "farcaster"],
+    emailShowWallets: true,
   },
 });
 
 function AppKitContextProvider({
   children,
-  cookies,
 }: {
   children: ReactNode;
-  cookies: string | null;
 }) {
-  const initialState = cookieToInitialState(
-    wagmiAdapter.wagmiConfig as Config,
-    cookies
-  );
-
-  return (
-    <WagmiProvider
-      config={wagmiAdapter.wagmiConfig as Config}
-      initialState={initialState}
-    >
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-    </WagmiProvider>
-  );
+  return <>{ children }</>;
 }
 
 export default AppKitContextProvider;

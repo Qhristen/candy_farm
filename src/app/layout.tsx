@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import { headers } from "next/headers";
 import "./globals.css";
-import { Toaster } from "@/components/ui/toaster";
+import  { Toaster } from 'react-hot-toast';
 
 export const metadata = {
   title: "candy farm",
@@ -45,13 +45,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const cookies = headers().get("cookie");
   return (
     <html lang="en">
       <body
         className={`${inter.className} ${PPNeueMachina.variable} ${PPMori.variable}`}
       >
-        <AppKitContextProvider cookies={cookies}>
+        <AppKitContextProvider>
           <Toaster />
           <Header />
           {children}

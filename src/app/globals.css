@@ -8,6 +8,17 @@ body {
     background-color: black;
 }
 
+@layer base {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+  }
+  
 .wallet-adapter-button-trigger {
     background: rgb(100, 26, 230) !important;
     border-radius: 8px !important;

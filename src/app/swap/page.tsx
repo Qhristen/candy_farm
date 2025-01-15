@@ -1,10 +1,10 @@
 import Container from "@/components/container";
-import HeroSection from "@/components/hero-section";
+import SwapInterface from "@/components/swap/swap-feature";
 
 export default function Page() {
   return (
     <Container>
-      <HeroSection />
+      <SwapInterface />
     </Container>
   );
 }
