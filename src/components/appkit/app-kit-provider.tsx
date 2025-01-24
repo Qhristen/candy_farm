@@ -25,7 +25,7 @@ if (!projectId) {
 const metadata = {
   name: "CandyFarm",
   description: "Candy farm wallet connect",
-  url: "https://blaqrio.fun",
+  url: "https://candyfarm.blaqrio.fun",
   icons: ["https://assets.reown.com/reown-profile-pic.png"],
 };
 
