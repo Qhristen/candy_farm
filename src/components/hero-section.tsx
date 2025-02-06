@@ -1,7 +1,9 @@
+"use client"
 import React from "react";
 import { ArrowUpDown, TrendingUp, Shield, Zap } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import AIIconButton from "./ai-icon";
 
 const HeroSection = () => {
   return (
@@ -106,6 +108,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+      <AIIconButton />
     </div>
   );
 };
